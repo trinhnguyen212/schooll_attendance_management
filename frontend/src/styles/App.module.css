@@ -1,0 +1,182 @@
+.dashboard {
+    flex: 1;
+    width: calc(100% - 230px);
+    height: 100%;
+    padding: 10px;
+    background-color: var(--color-background);
+    overflow: auto;
+    color: var(--color-primary);
+}
+
+.dashboardCard {
+    width: 100%;
+    max-width: 300px; /* Ensure the card has a max-width for large screens */
+    /* height: 150px; */
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-medium); /* Slightly more rounded */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* More subtle, softer shadow */
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure content is evenly spaced */
+}
+
+.dashboardCard:hover {
+    transform: translateY(-5px); /* Lift the card up on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+@media (max-width: 768px) {
+    .dashboardCard {
+        width: 100%; /* Full width for smaller screens */
+        max-width: none; /* Remove max-width constraint */
+    }
+}
+
+
+.actionBar {
+    display: flex;
+    justify-content: space-between; /* Pushes content to left and right */
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 50px;
+    flex-wrap: wrap;
+}
+
+.leftActions,
+.rightActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.actionItem {
+    border: none;
+    outline: none;
+    min-width: 80px;
+    width: fit-content;
+    height: 80%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: var(--border-radius-low);
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px;
+    gap: 5px;
+    user-select: none;
+    transition: var(--transition-timing-medium);
+}
+
+.actionItem:hover {
+    box-shadow: 0px 0px 5px var(--color-primary);
+}
+
+.actionItemWhite {
+    border: 2px solid var(--color-primary);
+    min-width: 80px;
+    width: fit-content;
+    height: calc(80% - 2px);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: var(--border-radius-low);
+    background-color: white;
+    padding: 10px;
+    gap: 5px;
+    user-select: none;
+    transition: var(--transition-timing-medium);
+}
+
+.actionItemWhiteBorderRed {
+    border: 2px solid var(--color-red);
+    width: 80px;
+    height: calc(80% - 2px);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: var(--border-radius-low);
+    background-color: white;
+    padding: 10px;
+    user-select: none;
+    transition: var(--transition-timing-medium);
+}
+.disabled {
+    filter: blur(2px);
+    pointer-events: none;
+    cursor: not-allowed;
+    transition: filter 0.3s ease;
+}
+
+.enabled {
+    filter: none;
+    pointer-events: auto;
+    transition: filter 0.3s ease;
+}
+
+.actionItemWhiteBorderRed:hover {
+    box-shadow: 0px 0px 5px var(--color-red);
+}
+
+.actionItemWhite:hover {
+    box-shadow: 0px 0px 5px var(--color-primary);
+}
+
+.button {
+    background-color: var(--color-primary);
+    color: white;
+    outline: none;
+    border: 1px solid var(--color-shadow);
+    border-radius: var(--border-radius-low);
+    box-shadow: 0px 0px 10px var(--color-shadow);
+    cursor: pointer;
+    user-select: none;
+}
+
+.input {
+    padding-left: 10px;
+    outline: none;
+    border: 1px solid var(--color-shadow);
+    border-radius: var(--border-radius-low);
+    box-shadow: 0px 0px 10px var(--color-shadow);
+    background-color: white;
+}
+
+.input:focus {
+    border: 1px solid var(--color-primary);
+}
+
+.input.error {
+    border-color: red;
+}
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+}
+
+.dataLoading {
+    width: 100px;
+    height: 30px;
+    border: 1px solid var(--color-shadow);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: var(--border-radius-low);
+    box-shadow: 0px 0px 10px var(--color-shadow);
+    padding-top: 3px;
+    background-color: white;
+}
+.buttonSubmitting {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+}

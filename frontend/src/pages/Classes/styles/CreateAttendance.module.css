@@ -1,0 +1,271 @@
+.createViewAttendanceContainer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    transition: var(--transition-timing-fast);
+    transition-property: background-color, opacity;
+    color: var(--color-primary);
+
+}
+
+.createViewAttendanceContainer.hide {
+    opacity: 0;
+}
+
+.createViewAttendanceForm {
+    width: 600px;
+    height: 490px;
+    background-color: white;
+    border-radius: var(--border-radius-low);
+    transform-origin: center center;
+    transition: height 0.3s ease-in-out; /* Smooth height transition */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+
+.createViewAttendanceForm.hide {
+    opacity: 0;
+    scale: 0.9;
+}
+/* CSS for disabled state */
+
+
+.header {
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header>.title {
+    font-size: 20px;
+}
+
+.header>.escButton {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.formContent {
+    flex: 1;
+    overflow-y: auto;
+    height: calc(100% - 40px);
+}
+
+.formData {
+    min-height: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.groupInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    gap: 20px;
+}
+
+.wrapItem {
+    position: relative;
+    margin-left: 20px;
+    height: 90px;
+    flex: 0 0 30%;
+}
+
+.wrapItem.textarea {
+    flex: 0 0 95%;
+    height: fit-content;
+}
+
+.wrapItem.textarea>.inputItem {
+    padding: 20px;
+    min-height: 70px;
+    resize: none;
+    overflow: hidden;
+}
+
+.wrapItem::after {
+    content: attr(data-error);
+    width: fit-content;
+    color: red;
+}
+
+.inputItem {
+    height: 40px;
+    width: 100%;
+}
+
+.inputItem.error {
+    border-color: red;
+}
+
+.customSelect {
+    width: 100%;
+    margin-left: 0;
+    z-index: 1;
+}
+
+.dataContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.joinedSupervisorsContainer {
+    width: 100%;
+    min-height: 50px;
+    height: fit-content;
+    border: 1px solid var(--color-shadow);
+    border-radius: var(--border-radius-low);
+    box-shadow: 0px 0px 10px var(--color-shadow);
+    list-style-type: none;
+}
+
+.joinedSupervisor {
+    width: fit-content;
+    height: 50px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: var(--border-radius-low);
+    border: 1px solid var(--color-shadow);
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
+}
+
+.joinedSupervisor>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.allSupervisorConatiner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius-low);
+    border: 1px solid var(--color-shadow);
+    border-left: 5px solid var(--color-primary);
+    cursor: pointer;
+    padding: 0px 20px 0px 20px;
+}
+
+
+.card>.cardLeft {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card>.cardLeft>svg {
+    font-size: 20px !important;
+}
+
+.actionItems {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+
+@media (width<=800px) {
+    .createViewAttendanceForm {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    /* .group-inputs {
+		flex-direction: column;
+		padding-right: 20px;
+		gap: 20px;
+	} */
+}
+/* Styles for table container */
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Slight background to separate table */
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Remove spacing between borders */
+    font-family: Arial, sans-serif;
+}
+
+/* Table header styling */
+.table thead {
+    background-color: var(--color-primary); /* Green background for header */
+    color: white;
+    text-align: left;
+}
+
+.table thead th {
+    padding: 12px 15px; /* Padding inside header cells */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Table row styling */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row colors for better readability */
+}
+
+.table tbody tr:hover {
+    background-color: #ddd; /* Highlight row on hover */
+}
+
+/* Table cell styling */
+.table td {
+    padding: 10px 15px; /* Padding inside cells */
+    border: 1px solid #ddd; /* Light border around each cell */
+    text-align: left;
+}
+
+/* Specific column styles */
+.column.superLarge {
+    width: 60%; /* Adjust the width of the user name column */
+}
+
+.column.small {
+    width: 20%; /* Adjust the width of the select column */
+}
+
+.columnSelect select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Add some spacing between rows */
+.table tbody tr {
+    margin-bottom: 5px;
+}

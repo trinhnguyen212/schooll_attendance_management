@@ -1,0 +1,21 @@
+name: school-attendance-app
+services:
+    nginx-server:
+        build: .
+        ports:
+            - "80:80"
+        restart: unless-stopped
+        volumes:
+            - "./backend/storage/logs:/var/www/school-attendance-app/storage/logs"
+            - "./backend/storage/uploads:/var/www/school-attendance-app/storage/uploads"
+            - "./docker/nginx/logs:/var/log/nginx"
+
+    redis:
+        image: redis:7.4.2-alpine
+        privileged: true
+        command: [ "sh", "-c", "sysctl vm.overcommit_memory=1 && redis-server" ]
+        ports:
+            - "6379:6379"
+        restart: unless-stopped
+        volumes:
+            - "./redis-data:/data"

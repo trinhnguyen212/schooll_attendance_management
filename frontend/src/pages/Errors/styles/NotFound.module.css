@@ -1,0 +1,20 @@
+.notFound {
+    width: 100%;
+    height: calc(100% - 75px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--color-primary);
+
+}
+
+.notFound>.title {
+    font-size: 72px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.goHome {
+    color: var(--color-primary);
+}

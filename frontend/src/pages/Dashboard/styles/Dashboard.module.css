@@ -1,0 +1,314 @@
+.dashboard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    color: var(--color-primary);
+
+}
+
+.wrapDashboardItem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+
+
+.section {
+    background-color: white;
+    padding: 10px;
+    border-radius: var(--border-radius-low);
+    box-shadow: 0px 0px 10px var(--color-shadow);
+}
+
+.wrapSections {
+    width: 80%; /* Adjust width to keep it centered */
+    margin: 0 auto;
+    margin-top: 80px; /* Increase the margin-top to move the chart down */
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the top for more space */
+    height: 350px; /* Maintain a shorter height */
+}
+
+.wrapSections > section:nth-child(1) {
+    flex-grow: 1;
+    min-width: 0;
+    height: 100%; /* Ensure full height */
+}
+
+.wrapSections > section:nth-child(2) {
+    flex-grow: 2;
+    min-width: 0;
+    height: 100%; /* Ensure full height */
+}
+
+.sectionTitle {
+    font-size: large !important;
+}
+
+/* .todaySlotsList {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    animation: animate-today-slots var(--transition-timing-slow) ease;
+    list-style-type: none;
+} */
+
+/* .todaySlotsItem {
+    width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    border-radius: var(--border-radius-low);
+    border: 1px solid var(--color-shadow);
+    border-left: 5px solid var(--color-primary);
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.todaySlotsItem>a {
+    width: 100%;
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+/* For smaller screens */
+@media (max-width: 800px) {
+    .wrapSections {
+        flex-direction: column;   /* Stack sections vertically */
+        gap: 10px;                /* Adjust gap */
+        height: auto;             /* Adjust height for mobile */
+    }
+
+    .wrapSections>section {
+        min-width: 100%;          /* Make sections full width on mobile */
+        height: auto;             /* Allow sections to adjust their height */
+    }
+}
+
+@media (width<=800px) {
+    .wrapSections {
+        height: 700px;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .wrapSections>section:nth-child(1) {
+        min-width: 100%;
+        min-height: 50%;
+    }
+
+    .wrapSections>section:nth-child(2) {
+        min-width: 100%;
+        min-height: 50%;
+    }
+}
+
+/* @keyframes animate-today-slots {
+    0% {
+        gap: 0px;
+    }
+
+    100% {
+        gap: 15px;
+    }
+} */
+
+.aboutSection {
+    background-color: #ffffff; /* Crisp white background for a brighter look */
+    padding: 2rem; /* Reduced padding for a more compact layout */
+    border-radius: 1rem; /* Slightly smaller rounded corners */
+    margin: 1.5rem 0; /* Reduced vertical spacing between sections */
+    line-height: 1.4; /* Maintain readability */
+    transition: transform 0.3s ease; /* Retain smooth transition for hover effects */
+}
+
+
+
+/* Hover effect for the aboutSection */
+.aboutSection:hover {
+    background-color: #f9fafc; /* Softer hover effect for user interaction */
+    transform: scale(1.03); /* Slightly stronger scaling effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow for hover */
+}
+
+/* Heading styles for h1 and h2 */
+.aboutSection h1 {
+    font-weight: 700; /* Strong emphasis */
+    color: var(--color-primary); /* Using your primary color */
+    margin-bottom: 2rem; /* Increased space for breathing room */
+    text-align: center; /* Center alignment for symmetry */
+    text-transform: uppercase; /* Uppercase letters for impact */
+    letter-spacing: 1px; /* Slightly more spaced for refined typography */
+    animation: fadeInWelcome 1.5s ease-in-out; /* Animation for header */
+}
+
+.aboutSection h2 {
+    margin-top: 2.5rem; /* Space above section header */
+    margin-bottom: 1.5rem; /* Space below section header */
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary); /* Thicker underline effect for emphasis */
+    padding-bottom: 0.5rem; /* Space for underline clarity */
+}
+
+/* Paragraph styling */
+.aboutSection p {
+    margin-bottom: 1.5rem; /* Spacing for readability */
+    color: #374151; /* Slightly lighter gray for better legibility */
+}
+
+/* Styling for lists */
+.aboutSection ul {
+    list-style-type: circle; /* Elegant marker style */
+    padding-left: 2.5rem; /* Align text further for readability */
+    margin-bottom: 2rem; /* Space below lists */
+}
+
+.aboutSection li {
+    margin-bottom: 1rem; /* Space between list items */
+    color: #111827; /* Consistent dark gray for readability */
+}
+
+/* Contact button styling */
+.contactButton {
+    display: inline-block;
+    margin-top: 3rem; /* Space above the button */
+    background-color: var(--color-primary); /* Bright and inviting blue */
+    color: #ffffff; /* High-contrast text for accessibility */
+    padding: 1.25rem 2.5rem; /* Larger button for easy touch interaction */
+    border-radius: 9999px; /* Full-rounded button for modern look */
+    text-decoration: none; /* No underline */
+    font-weight: 700; /* Bold text for emphasis */
+    font-size: 1rem; /* Ensure text size is suitable */
+    text-align: center; /* Center the text horizontally */
+    vertical-align: middle; /* Ensure text is vertically centered */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle depth for the button */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    line-height: 1.25rem; /* Improves vertical alignment if necessary */
+}
+
+
+/* Hover effect for contact button */
+.contactButton:hover {
+    background-color: #1e40af; /* Richer blue for hover effect */
+    transform: translateY(-3px); /* Slight lift for interactivity */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced depth on hover */
+}
+
+/* User name styling */
+.userName {
+    font-weight: 900; /* Extra bold for emphasis */
+    font-size: 3rem; /* Slightly larger text for distinction */
+    color: var(--color-primary); /* Using your primary color */
+    letter-spacing: 1px; /* Adds subtle spacing for elegance */
+    text-transform: capitalize; /* Capitalizes first letter of the name */
+ 
+    padding: 0.5rem 1rem; /* Padding for spacing */
+    border-radius: 1rem; /* Rounded corners for a soft, welcoming effect */
+    display: inline-block; /* Makes the name inline for text flow */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effects */
+}
+
+@media (max-width: 768px) {
+    .wrapSections {
+        flex-direction: column; /* Stack vertically for smaller screens */
+        height: 450px; /* Adjust height for small screens */
+        margin-top: 20px; /* Adjust the margin-top for mobile view */
+    }
+
+    .wrapSections > section:nth-child(1),
+    .wrapSections > section:nth-child(2) {
+        min-width: 100%;
+        height: 50%; /* Divide height evenly between sections */
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .aboutSection {
+        padding: 2rem; /* Adjust padding on smaller screens */
+        font-size: 0.85rem; /* Slightly smaller font size */
+    }
+
+    .aboutSection h1 {
+        font-size: 1.5rem; /* Smaller heading size */
+    }
+
+    .aboutSection h2 {
+        font-size: 1.25rem; /* Adjust h2 for smaller screens */
+    }
+
+    .aboutSection p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+    }
+
+    .contactButton {
+        width: 100%; /* Make the button full width on mobile */
+        padding: 1rem 0; /* Adjust button padding */
+    }
+
+    /* Adjust the user name styling */
+    .userName {
+        font-size: 2.2rem; /* Adjust user name font size */
+        padding: 0.3rem 0.8rem; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Extra small screen responsiveness */
+@media (max-width: 480px) {
+    .aboutSection {
+        padding: 1.5rem; /* Reduce padding for very small screens */
+    }
+
+    .aboutSection h1 {
+        font-size: 1.25rem; /* Smaller heading size */
+    }
+
+    .aboutSection h2 {
+        font-size: 1.1rem; /* Slightly smaller h2 */
+    }
+
+    .aboutSection p {
+        font-size: 0.85rem; /* Smaller paragraph size */
+    }
+
+    .contactButton {
+        font-size: 1rem; /* Larger font for easier tap */
+        padding: 0.75rem 1.5rem; /* Adjust padding */
+    }
+
+    .userName {
+        font-size: 2rem; /* Further reduce the size of the user name */
+        padding: 0.25rem 0.6rem; /* Adjust padding */
+    }
+}
+
+.donationInfo {
+    font-size: 1rem; /* Ensures text is readable */
+    color: #374151; /* Subtle gray for a professional look */
+    line-height: 1.6; /* Enhances readability with proper spacing */
+    margin-bottom: 1.5rem; /* Space below the paragraph */
+    text-align: justify; /* Aligns the text cleanly on both sides */
+}
+
+.donationInfo a {
+    color: #2563eb; /* Vivid blue to draw attention */
+    text-decoration: none; /* Removes underline for a cleaner look */
+    font-weight: bold; /* Emphasizes the link */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.donationInfo a:hover {
+    color: #1d4ed8; /* Slightly darker blue on hover */
+    text-shadow: 0 1px 5px rgba(29, 78, 216, 0.6); /* Adds a subtle glow */
+    cursor: pointer; /* Changes cursor to pointer */
+}

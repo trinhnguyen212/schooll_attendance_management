@@ -1,0 +1,52 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: #fff5f5;
+  border: 1px solid #ffcccc;
+  color: #b00020;
+  padding: 20px;
+  border-radius: 12px;
+  width: 500px;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #b00020;
+}
+
+.content {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.message {
+  font-size: 15px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

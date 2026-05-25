@@ -1,0 +1,207 @@
+.pageContent {
+    width: 100%;
+    position: relative;
+    color: var(--color-primary);
+}
+
+.filterForm {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: var(--border-radius-low);
+    box-shadow: 0px 0px 10px var(--color-shadow);
+}
+
+.wrapInputItem {
+    max-height: 40px;
+    max-width: 300px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wrapInputItem>label {
+    white-space: nowrap;
+}
+
+.inputItem {
+    height: 40px;
+    width: 100%;
+}
+
+.customSelect {
+    z-index: 1;
+    max-height: 40px;
+    max-width: 300px;
+    width: 80%;
+    height: 100%;
+}
+
+.wrapCardContainer {
+    height: calc(100%);
+    /* overflow-y: auto; */
+}
+
+.cardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.card {
+    flex: 0 0 calc(25% - 15px);
+    min-width: 160px;
+    height: auto; /* Make the height flexible based on content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure content stretches across the card */
+    border-radius: var(--border-radius-medium); /* Softer, rounded corners */
+    border-left: 5px solid var(--color-primary);
+    background-color: var(--color-white); /* White background for cleanliness */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    padding: 15px;
+    overflow: hidden; /* Prevent overflow of content */
+    cursor: pointer; /* Make it clear the card is interactive */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Hover effect: lift the card */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow to highlight the card */
+}
+
+.card-header {
+    font-size: 1.2em; /* Increase title font size for emphasis */
+    font-weight: bold;
+    margin-bottom: 10px; /* Space between title and description */
+    color: var(--color-primary); /* Make title stand out */
+}
+
+.card-description {
+    font-size: 1em; /* Default text size */
+    color: var(--color-gray-dark); /* Soft gray for description text */
+    flex-grow: 1; /* Allow description to expand and take available space */
+    line-height: 1.5; /* Better readability */
+    margin-bottom: 10px; /* Add some space after description */
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.9em; /* Smaller text in footer */
+    color: var(--color-gray-light); /* Light gray for footer elements */
+}
+
+.card-footer .card-icon {
+    font-size: 1.5em; /* Icons should be large for better visibility */
+    color: var(--color-primary);
+    transition: transform 0.2s ease; /* Smooth transition for icon hover effects */
+}
+
+.card-footer .card-icon:hover {
+    transform: scale(1.1); /* Slight increase in size on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card {
+        flex: 0 0 calc(33.33% - 15px); /* 3 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 15px); /* 2 cards per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 0 0 100%; /* Single card per row on mobile screens */
+    }
+}
+
+
+.card img {
+    display: none;
+}
+
+.card>.cardTop {
+    height: 50%;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+}
+
+.cardTop>.content {
+    font-size: 16px;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card>.cardBottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.card>.cardBottom>svg {
+    font-size: 18px;
+}
+
+.cardSection {
+    padding: 0 10px 0 10px;
+}
+
+.card>.cardSection>p {
+    font-size: 16px;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.badge {
+    border-radius: var(--border-radius-low);
+    color: white;
+    width: fit-content;
+    padding: 3px;
+}
+
+.badge.red {
+    background-color: var(--color-soft-red);
+}
+
+.badge.green {
+    background-color: var(--color-soft-green);
+}
+
+.badge.yellow {
+    background-color: var(--color-soft-yellow);
+    color: black;
+}
+
+@media (width<=1000px) {
+    .card {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media (width<=800px) {}

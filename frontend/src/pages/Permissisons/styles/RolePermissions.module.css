@@ -1,0 +1,89 @@
+.rolePermissionContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+    color: var(--color-primary);
+
+}
+
+.permissionContainer {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.permissionList {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.permissionItem {
+    flex: 0 0 calc((100% / 3) - 20px);
+    white-space: nowrap;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.permissionItem>label {
+    margin-left: 10px;
+}
+
+.permissionItem>input {
+    accent-color: var(--color-primary);
+    width: 20px;
+    height: 20px;
+}
+
+.actionItems {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+@media(width<=800px) {
+    .permissionItem {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+
+/*  */
+.customTabs {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0; /* Light background color for tabs container */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for container */
+}
+
+.customTab {
+    padding: 12px 25px;
+    background-color: #ffffff; /* Background color for tabs */
+    border: none; /* Remove default border */
+    border-radius: 25px; /* Fully rounded tabs */
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold; /* Bold text for tabs */
+}
+
+.customTab:hover {
+    background-color: #e0e0e0; /* Background color on hover */
+    color: #007bff; /* Text color on hover */
+}
+
+.customTab.active {
+    background-color: #007bff; /* Background color for active tab */
+    color: #ffffff; /* Text color for active tab */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for active tab */
+}

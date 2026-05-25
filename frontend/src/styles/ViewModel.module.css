@@ -1,0 +1,250 @@
+.viewModelContainer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    transition: var(--transition-timing-fast);
+    transition-property: background-color, opacity;
+    color: var(--color-primary);
+
+}
+
+.viewModelContainer.hide {
+    opacity: 0;
+}
+
+.viewModelForm {
+    width: 90%;
+    height: 90%;
+    /* box-shadow: 0px 0px 10px var(--color-shadow); */
+    background-color: white;
+    border-radius: var(--border-radius-low);
+    transform-origin: center center;
+    transition: var(--transition-timing-medium);
+    overflow-y: hidden;
+}
+
+.viewModelForm.hide {
+    opacity: 0;
+    scale: 0.9;
+}
+
+.header {
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header>.title {
+    font-size: 20px;
+}
+
+.header>.escButton {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.formContent {
+    flex: 1;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+}
+
+.formData {
+    min-height: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.groupInputs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wrapItem {
+    position: relative;
+    /* margin-left: 20px; */
+    height: 90px;
+    flex: 0 0 calc((100% / 3) - 10px);
+}
+
+.wrapItem.textarea {
+    flex: 0 0 100%;
+    height: fit-content;
+}
+
+.wrapItem.textarea>.inputItem {
+    padding: 20px;
+    min-height: 70px;
+    resize: none;
+    overflow: hidden;
+}
+
+.wrapItem::after {
+    content: attr(data-error);
+    width: fit-content;
+    color: red;
+}
+
+.inputItem {
+    height: 40px;
+    width: 100%;
+}
+
+.inputItem.error {
+    border-color: red;
+}
+
+.customSelect {
+    width: 100%;
+    margin-left: 0;
+    z-index: 1;
+}
+
+.selectWithIcon {
+    position: relative;
+}
+
+.dropdownIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 2; /* Important to be above the CustomSelect */
+}
+.actionItems {
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.pending {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+}
+
+.link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (width<=800px) {
+    .viewModelForm {
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    .groupInputs {
+        flex-wrap: unset;
+        flex-direction: column;
+        /* padding-right: 20px; */
+        gap: 20px;
+    }
+
+    .wrapItem {
+        flex: unset;
+    }
+}
+
+/* 
+*/
+/* User List */
+.userList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 5px;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+}
+
+/* User Item */
+.userItem {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.userItem:last-child {
+    border-bottom: none;
+}
+
+.userItem:hover {
+    background-color: #e8f4f8;
+    color: #007bff;
+}
+
+/* User Name */
+.userName {
+    font-size: 14px;
+    /* font-weight: 500; */
+    /* color: #333; */
+}
+
+.allParentContainer {
+    list-style: none;  /* Removes default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+/* 
+ */
+ .joinedParentsContainer {
+    width: 100%;
+    min-height: 40px; /* Ensures initial small height */
+    border: 1px solid var(--color-shadow); /* Light gray border */
+    border-radius: var(--border-radius-low);  /* Rounded edges */
+   background-color: white;  /* White background */
+   box-shadow:  0px 0px 10px var(--color-shadow);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap into new lines */
+    padding: 10px 15px; /* Inner padding */
+    gap: 10px; /* Spacing between parent items */
+}
+
+.joinedParent {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between name and remove icon */
+}
+
+.joinedParent span {
+    font-size: 14px;
+    /* color: #333; */
+}
+
+.joinedParent span:last-child {
+    cursor: pointer;
+    font-size: 16px;
+    color: red; /* Highlight remove icon */
+}
