@@ -51,7 +51,7 @@ COPY --from=node-builder /app/dist/index.html /var/www/school-attendance-app/res
 
 # Grant permissions
 RUN chown -R www-data:www-data /var/www/school-attendance-app/storage /var/www/school-attendance-app/bootstrap/cache
-RUN chown -R 775 /var/www/school-attendance-app/storage/logs
+RUN chmod -R 775 /var/www/school-attendance-app/storage/logs
 
 # Handle uploads
 RUN mkdir -p /var/www/school-attendance-app/storage/uploads && \
