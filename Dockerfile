@@ -71,4 +71,4 @@ RUN mkdir -p /var/run/php-fpm && \
 
 EXPOSE 80
 
-CMD ["sh", "-c", "php-fpm & nginx -g 'daemon off;' & crond -f"]
+CMD ["sh", "-c", "php artisan migrate --force && php-fpm -D && nginx -g 'daemon off;'"]
