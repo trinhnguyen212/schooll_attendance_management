@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->datetimes();
 
-            $table->fullText(['name']);
+            $table->index(['name']);
         });
     }
 
