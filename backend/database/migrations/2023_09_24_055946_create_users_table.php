@@ -32,7 +32,7 @@ return new class extends Migration
             $table->datetimes();
             $table->foreign('role_id')->references('id')->on('roles')->cascadeOnDelete();
 
-            $table->fullText([
+            $table->index([
                 'first_name',
                 'last_name',
                 'address'
